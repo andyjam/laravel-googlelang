@@ -3,6 +3,7 @@
 namespace Isdgroup\Isdcore;
 
 use Illuminate\Support\ServiceProvider;
+use \Illuminate\Routing\Router;
 
 class IsdcoreServiceProvider extends ServiceProvider
 {
@@ -22,7 +23,7 @@ class IsdcoreServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        dd('testing');
+        //dd('testing');
         // use this if your package has views
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'isdcore');
 
@@ -46,13 +47,13 @@ class IsdcoreServiceProvider extends ServiceProvider
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    /*public function setupRoutes(Router $router)
+    public function setupRoutes(Router $router)
     {
-        $router->group(['namespace' => 'League\Skeleton\Http\Controllers'], function($router)
+        $router->group(['namespace' => 'Isdgroup\Isdcore\Http\Controllers'], function($router)
             {
                 require __DIR__.'/Http/routes.php';
             });
-    }*/
+    }
 
     /**
      * Register any package services.
@@ -62,11 +63,18 @@ class IsdcoreServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerIsdcore();
-
+        $this->registerUpdateLangCommand();
         // use this if your package has a config file
         // config([
         //         'config/skeleton.php',
         // ]);
+    }
+
+    private function  registerUpdateLangCommand(){
+        $this->app->singleton('command.isdgroup.updatelang', function ($app) {
+                return $app['Isdgroup\Isdcore\Commands\UpdateLangCommand'];
+            });
+        $this->commands('command.isdgroup.updatelang');
     }
 
     private function registerIsdcore()

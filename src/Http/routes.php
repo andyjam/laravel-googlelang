@@ -1,4 +1,5 @@
 <?php
+namespace Isdgroup\Isdcore\Http;
 /**
  * Created by PhpStorm.
  * User: Alex
