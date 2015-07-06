@@ -2,7 +2,7 @@
 
 namespace Isdgroup\Isdcore;
 
-class SkeletonClass
+class IsdcoreClass
 {
     /**
      * Create a new Skeleton Instance
