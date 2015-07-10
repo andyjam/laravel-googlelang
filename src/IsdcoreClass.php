@@ -62,7 +62,7 @@ class IsdcoreClass
      * @return bool
      * @throws \Exception
      */
-    public function parseLangCSV($res, $lang = '', $fname = 'main')
+    public function parseLangCSV($res, $lang = '', $fname = 'main', $commentSeparator = '#')
     {
         $path = \App::langPath() . DIRECTORY_SEPARATOR;
         $path_js = \App::publicPath() . DIRECTORY_SEPARATOR . 'js/lang/' . DIRECTORY_SEPARATOR;
@@ -91,7 +91,7 @@ class IsdcoreClass
                     if (count($line) < 2) {
                         continue;
                     }
-                    if ($line[0][0] == '#') {
+                    if ($line[0][0] == $commentSeparator) {
                         continue;
                     }
                     if (isset($line[$k])) {
