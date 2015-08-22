@@ -1,11 +1,12 @@
 {
-    "name": "isdgroup/isdcore",
-    "description": "ISD Group Core functional",
+    "name": "assada/laravel-googlelang",
+    "description": "Laravel 5 command for parse langs from Google Spreadsheet",
     "keywords": [
-        "isdgroup",
-        "isdcore"
+        "Laravel",
+        "googlelang",
+        "Spreadsheet"
     ],
-    "homepage": "https://github.com/Assada/isd-core",
+    "homepage": "https://github.com/Assada/laravel-googlelang",
     "license": "MIT",
     "authors": [
         {
