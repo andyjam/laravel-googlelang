@@ -9,7 +9,7 @@ ISD Core Package add ISD-Group special functionality to your Laravel5 project
 Via Composer
 
 ``` bash
-$ composer require assada/isd-core
+$ composer require andyjam/isd-core
 ```
 
 ## Usage
