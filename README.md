@@ -8,8 +8,16 @@ ISD Core Package add ISD-Group special functionality to your Laravel5 project
 
 Via Composer
 
+Add the following to you composer.json:
+
 ``` bash
-$ composer require andyjam/isd-core
+    "repositories": [
+        { "type": "package", "package": {"name": "isdgroup/isdcore", "version": "dev", "source": {"url": "git@github.com:andyjam/laravel-googlelang.git", "type": "git", "reference": "master" } } }
+    ]
+```
+
+``` bash
+$ composer require isdgroup/isdcore
 ```
 
 ## Usage
@@ -18,6 +26,13 @@ add to config/app.php
 ``` php
 'Isdgroup\Isdcore\IsdcoreServiceProvider',
 ```
+
+to update lang run
+``` bash
+php artisan isdgroup:update:lang <google_doc_id>
+```
+
+where <google_doc_id> is ID of the document from the url string (example: 1Pad-mK4oazehsacW6i5vnfShZCrhokhpv29_45Ikw5U)
 
 ## Change log
 
