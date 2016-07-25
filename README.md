@@ -32,7 +32,7 @@ to update lang run
 php artisan isdgroup:update:lang <google_doc_id>
 ```
 
-where <google_doc_id> is ID of the document from the url string (example: 1Pad-mK4oazehsacW6i5vnfShZCrhokhpv29_45Ikw5U)
+where &lt;google_doc_id&gt; is ID of the document from the url string (example: 1Pad-mK4oazehsacW6i5vnfShZCrhokhpv29_45Ikw5U)
 
 ## Change log
 
