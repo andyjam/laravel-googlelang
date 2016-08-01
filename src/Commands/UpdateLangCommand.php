@@ -49,12 +49,11 @@ class UpdateLangCommand extends Command {
     public function fire()
     {
         $pubid = $this->argument('pubid'); //1SJxI629NnhciF3YcSt0vH3btACcXbNtglRy9VkTmGtc
+        $fname = $this->argument('fname'); //main
+	if(empty($fname)) $fname = 'main';
         App::setLocale('ua');
-        #echo Lang::get('deseases.hepa_b');
         $data = $this->core->getGoogleDoc($pubid, 0);
-        #$path = App::storagePath() . DIRECTORY_SEPARATOR . 'lang.csv';
-        #file_put_contents($path, $data);
-        $this->core->parseLangCSV($data);
+        $this->core->parseLangCSV($data, '', $fname);
     }
 
     /**
@@ -66,6 +65,7 @@ class UpdateLangCommand extends Command {
     {
         return [
             	['pubid', InputArgument::REQUIRED, 'Google doc PUB ID.'],
+            	['fname', InputArgument::OPTIONAL, 'Resource file name.'],
         ];
     }
 
